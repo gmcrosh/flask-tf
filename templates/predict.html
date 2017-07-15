@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}Prediction{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="header">
+        <h3 class="text-muted">Prediction</h3>
+    </div>
+    <hr/>
+    <div>
+        <img src="{{ filename_url }}"/>
+        <ul class="messages">
+        {% for class, score in classes %}
+            <li> {{class}} : {{score}}
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
